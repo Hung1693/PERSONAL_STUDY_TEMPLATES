@@ -1,0 +1,46 @@
+1. State:
+	a. Data hold onto in memory, data storage.
+	b. = PROPERTIES in object (ATTRIBUTES in OOP)
+
+2. Behavior:
+	a. Interactivity 
+
+*Ex:
+const list = {
+  items: [], //State
+  add: function (item) {
+    this.items.push(item)  //Behavior
+  }
+}
+
+3. METHOD
+	a. = function called in object
+
+4. THIS key word
+	a. this point to object before . when called
+	Ex: const list = {
+		item: [];
+		add: function(item){
+			this.items.push(item) //this refers to list
+		}
+	}
+	list.add('chips')  //called here => this = list
+
+5. CLASS
+	a. template to generate js object
+	EX: class Building{}
+
+	b generate new instances: keyword new
+	EX: const myHouse = new Building(); //creating instances process == instantiation
+		const tower = new Building();
+
+	EX: class Building {
+		constructor(floor){
+			this.floor = floor;
+			this.emergencyExit = true;
+		}
+	}
+		const myHouse = new Building(2); //myHouse has 2 floors and emergencyExit: myHouse.floor = 2
+	
+	c. CONSTRUCTOR(){}: a function, called after new
+	 
