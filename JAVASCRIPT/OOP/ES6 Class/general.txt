@@ -1,0 +1,80 @@
+**class NAME{
+	constructor(params){
+		this.params = params;
+	}
+	function(){
+	}
+}
+
+1. State:
+	a. Data hold onto in memory, data storage.
+	b. = PROPERTIES in object (ATTRIBUTES in OOP)
+
+2. Behavior:
+	a. Interactivity 
+
+*Ex:
+const list = {
+  items: [], //State
+  add: function (item) {
+    this.items.push(item)  //Behavior
+  }
+}
+
+3. METHOD
+	a. = function called in object
+
+4. THIS key word
+	a. this point to object before . when called
+	Ex: const list = {
+		item: [];
+		add: function(item){
+			this.items.push(item) //this refers to list
+		}
+	}
+	list.add('chips')  //called here => this = list
+
+5. CLASS
+	a. template to generate js object
+	EX: class Building{}
+
+	b generate new instances: keyword new
+	EX: const myHouse = new Building(); //creating instances process == instantiation
+		const tower = new Building();
+
+	EX: class Building {
+		constructor(floor){
+			this.floor = floor;
+			this.emergencyExit = true;
+		}
+	}
+		const myHouse = new Building(2); //myHouse has 2 floors and emergencyExit: myHouse.floor = 2
+	
+	c. CONSTRUCTOR(params){this.params = params}: a function, called after new
+
+6. 4 PILLARS OF OOP
+	a. Encapsulation
+		I. Restrict instance variables and methods: this._props
+		II. Construct methods to allow access: 
+			get function(){return this._props}: allow access
+			set function(newVal){this._props = newVal}
+	b. Inheritance
+		I. Use instance variables and methods from another class (subclass inheriting from parent (super) class )
+	c. Polymorphism
+	d. Data Abstraction
+
+7. STATIC METHOD
+	a. Functions related to class but not related to instances
+		ex: Math.random()
+			Array.isArray('not an array')
+			Object.keys({ color: 'red' })
+	b. To access static properties: 
+		class Article{
+			static publisher = "abc";
+			changePublisher(newPub){
+				this.constructor.publisher = newPub;
+			}
+		} 
+	c. If constructor.properties changed in any instance, the static property in class will be changed
+
+	 

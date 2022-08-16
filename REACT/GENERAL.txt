@@ -1,0 +1,52 @@
+1. CREATE REACT COMPONENT
+	 A. function: const App = () => (<html></html>) || const App = () => {return (html)}
+
+2. RENDER
+	 A. ReactDom.render(componentInstance, DOMElement).
+		  EX: ReactDom.render(<APP />, document.getElementById("id"));
+
+3. props
+	 A. is a super object in ReactDOM (that means we can access the same props from any class in the same file) to pass in components as argument, read-only
+	 ***Always put dynamic value and variable and console.log() inside {}
+	 EX:  const TodoList = (props) => (
+		  ul
+				li {props.todo[index]} /li
+		  /ul
+	 )
+	 //props will be an object
+		  const App = () => (
+				//pass todo to props in componentInstance
+				<TodoList todo={[]} />
+		  )
+	 B. <App *everything here is inside props* />
+		  EX: <App array = {[1,2,3]}>. To access array: props.array
+
+4. state
+	 A. State is a built-in react object
+	 B. Allow managing data changing
+	 C. Without useState() hook, only class component can use state
+	 D. State is declared in constructor:
+		  EX: class ListItem extends React.Component{
+				constructor(props){
+					 super(props)
+					 this.state = {};
+				}
+		  }
+
+5. this.setState()
+	 A. is a built-in function to update state
+
+6. IMMUTABILITY IS IMPORTANT (make a copy of state or props without changeling original)
+	 A. Keep original data => user later (ex: undo feature)
+	 B. Detecting changes
+	 C. When we need to re-render after props or state change, we compare nextProps or nextState in shouldComponentUpdate()
+		  EX: shouldComponentUpdate(nextProps, nextState) {
+					 if (this.props.color !== nextProps.color) {
+						  return true;
+					 }
+					 if (this.state.count !== nextState.count) {
+						  return true;
+					 }
+					 return false;
+				}
+
