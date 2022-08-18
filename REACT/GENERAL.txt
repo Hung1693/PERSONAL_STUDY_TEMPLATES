@@ -6,7 +6,7 @@
 		  EX: ReactDom.render(<APP />, document.getElementById("id"));
 
 3. props
-	 A. is a super object in ReactDOM (that means we can access the same props from any class in the same file) to pass in components as argument, read-only
+	A. is a super object in ReactDOM (that means we can access the same props from any class in the same file) to pass in components as argument, read-only
 	 ***Always put dynamic value and variable and console.log() inside {}
 	 EX:  const TodoList = (props) => (
 		  ul
@@ -18,14 +18,16 @@
 				//pass todo to props in componentInstance
 				<TodoList todo={[]} />
 		  )
-	 B. <App *everything here is inside props* />
+	B. <App *everything here is inside props* />
 		  EX: <App array = {[1,2,3]}>. To access array: props.array
 
+	C. props.children: built-in property
+
 4. state
-	 A. State is a built-in react object
-	 B. Allow managing data changing
-	 C. Without useState() hook, only class component can use state
-	 D. State is declared in constructor:
+	A. State is a built-in react object
+	B. Allow managing data changing
+	C. Without useState() hook, only class component can use state
+	D. State is declared in constructor:
 		  EX: class ListItem extends React.Component{
 				constructor(props){
 					 super(props)
@@ -50,3 +52,22 @@
 					 return false;
 				}
 
+7. key={id}: ex: <li key={user.id}>{user.name}: {user.taskCount} tasks left</li>
+	A. key is not belonging to props (can't use this.props.key)
+	B. use array index to set key is not recommended
+	C. key do not need to be globally unique, only need to be unique between components and their siblings
+
+8. LIFTING STATE UP
+	A. If a state need to use in different children components, we should lift it up to parent comp 
+
+9. ARRAY COPY:
+	A. Use .slice() if array contain "words"
+	B. Use [...] if array contains number only.
+
+10. useState hook: 
+	A. stateless functional component: no state
+	B. stateful functional component: state
+	C. useState() is a an array: 
+		ex: const [on, setOn] = useState(false);
+		==> useState[0] = on = false
+			useState[1] = setOn() 
