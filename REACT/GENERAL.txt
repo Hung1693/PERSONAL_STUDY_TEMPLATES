@@ -71,3 +71,11 @@
 		ex: const [on, setOn] = useState(false);
 		==> useState[0] = on = false
 			useState[1] = setOn() 
+	E. stale state: the state not updated corresponding with event. To avoid, use callback in setState().
+		EX: const [count, setCount] = useState(0);
+    		const increment = () => {
+        	setTimeout(()=> {setCount(count => count+1)}, 1000)
+    }
+11. RULE OF HOOKS
+	A. Can't be placed in function handler, if, loop.
+	B. Should be placed at top inside the component
