@@ -79,3 +79,5 @@
 11. RULE OF HOOKS
 	A. Can't be placed in function handler, if, loop.
 	B. Should be placed at top inside the component
+
+12. onClick(()=>{}): onCLick has callback function. If the parameter is already a function, no need () after. If its is not (inside props to passed arround) we need to put it in callback. (Ref: function_tictactoe project, pass around onCLick props onLick={()=>props.onCLick()} because onClick from parent component is not a function ) 
