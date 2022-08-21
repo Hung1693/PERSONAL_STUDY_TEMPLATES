@@ -3,8 +3,8 @@ import Counter from "./components/counter/Counter";
 import Toggle from "./components/toggle/Toggle";
 import Form from "./components/form/Form";
 import RadioForm from "./components/form/RadioForm";
-import { useState } from "react";
 import CheckboxForm from "./components/form/CheckboxForm";
+import RenderInput from "./components/form/RenderInput";
 
 function App() {
   return (
@@ -20,6 +20,8 @@ function App() {
       <RadioForm></RadioForm>
       <h3>---Check box form</h3>
       <CheckboxForm></CheckboxForm>
+      <h3>---Render tasks todolist</h3>
+      <RenderInput></RenderInput>
     </div>
   );
 }
